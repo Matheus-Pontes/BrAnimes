@@ -1,3 +1,7 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body {
     margin:0;
     padding:0;
@@ -27,9 +31,9 @@ header .container {
 }
 
 #direita {
-    background: #212729;
     flex: 1;
     text-align: center;
+    margin-bottom: 8px;
 }
 
 #direita p {
@@ -49,7 +53,8 @@ header .container {
     text-decoration: none;
     background-color: rgb(63, 63, 235);
     text-transform: uppercase;
-    padding: 10px;
+    font-size: 10pt;
+    padding: 0.75rem;
     border-radius: 8px;
 
     transition: background-color .5s;

@@ -5,29 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrAnimes</title>
     <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <header>
-        <div>
-            <section>
-                <img src="imagens/logo.png" alt="logo">
+        <div class="container">
+            <section id="logo">   
+                <img src="../img/logo.png" alt="logo">
             </section>
-            <section>
+            <section id="direita">
                 <p>Seus melhores animes em um único lugar.</p>
                 <nav>
-                    <a href="index.html">HOME</a>
-                    <a href="programacao.html">PROGRAMAÇÃO</a>
-                    <a href="galeria.html">GALERIA</a>
-                    <a href="planos.html">PLANOS PLUS</a>
-                    <a href="contato.html">CONTATO</a>
-
+                    <a href="/html/index.html">HOME</a>
+                    <a href="/html/programacao.html">PROGRAMAÇÃO</a>
+                    <a href="/html/galeria.html">GALERIA</a>
+                    <a href="/html/planos.html">PLANOS PLUS</a>
+                    <a href="/html/contato.html">CONTATO</a>
                 </nav>
             </section>
         </div>
     </header>
 
     <main>
+        <h1>Contato</h1>
 
+        <section>
+            <figure>
+                <img src="../img/email.png" alt="email">
+            </figure>
+            <form action="">
+                <input type="text" name="txtnome" placeholder="Nome">
+
+                <input type="email" name="txtemail" placeholder="e-mail">
+
+                <textarea name="msg" id="" cols="40" rows="4" plcaholder="Mensagem"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     </main>
 
     <footer>

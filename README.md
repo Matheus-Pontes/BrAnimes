@@ -7,3 +7,4 @@
 
 ## :gear: Instalações
 - [VScode - versão stable](https://code.visualstudio.com/) 
+

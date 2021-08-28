@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    background: #333;
+}
+
+form {
+    width: 600px;
+    box-shadow: 0 0 8px #FFF;
+    border-radius: 4px;
+    margin: 25vh auto;
+    background: rgb(29, 1, 1);
+    color: #fff;
+}
+
+form > fieldset > h2, form > fieldset > p {
+    text-align: center;
+    padding: .3rem;
+} 
+
+fieldset {
+    border: 0;
+    text-align: center;
+}
+
+.field {
+    padding: 0.6rem;
+}
+
+input {
+    width: 400px;
+    padding: 4px;
+}
+
+select {
+    padding: 4px;
+}
+
+#fieldMessage {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#fieldMessage > textarea {
+    resize: vertical;
+}
+
+#fieldButton {
+    width: 550px;
+    text-align: right;
+}
+
+button {
+    
+    margin: 20px auto;
+    background: rgb(58, 107, 199);
+    padding: .5rem 1.5rem;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+}

@@ -1,0 +1,25 @@
+div {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    border-radius: 130px;
+    width: 500px;
+    color: white;
+    text-align: center;
+    margin: 50px auto;
+    font-size: 50pt;        
+    padding: 2rem; 
+    /* transform: translateY(-50%); */
+}
+
+div input {
+    font-size: 50pt;        
+    width: 50%;
+    padding: 2rem;
+    margin: 1rem;
+}
+
+div.res {
+    font-size: 50pt;        
+    width: 80%;
+    border-radius: 0; 
+}

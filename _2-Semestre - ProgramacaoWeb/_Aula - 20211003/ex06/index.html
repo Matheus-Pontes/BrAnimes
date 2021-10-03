@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Calculo nota final</h1>
+    <p>Informe os dados abaixo, para mostrarmos sua situação</p>
+
+    <form action="" method="post">
+        <label for="">Nome: </label> 
+        <input type="text" id='name'>
+        <br>
+        <label for="">RGM: </label>
+        <input type="text" id='rgm'>
+        <br>
+        <label for="">Nota parcial: </label>
+        <input type="text" id='notaParcial'>
+        <br>
+        <label for="">Nota exercícios: </label>
+        <input type="text" id='notaExercicios'>
+        <br>
+        <label for="">Nota regimental: </label>
+        <input type="text" id='notaRegimental'>
+    </form>
+
+    <button id="cadastrar" class='click'>Cadastrar</button>
+    <button id="exibirDados">Exibir dados</button>
+
+    <div class="message">
+        <div class="row">
+            <h3>Aviso!</h3>
+        </div>
+        <div class="row">
+            <p>Usuário cadastrado com sucesso!</p>
+        </div>
+        <div class="row">
+            <button id='confirm'>OK</button>
+        </div>
+    </div>
+
+    <table class="exibindoDados">
+        <tr>
+            <td>Nome</td>
+            <td>RGM</td>
+            <td>Nota parcial</td>
+            <td>Nota exercícios</td>
+            <td>Nota regimental</td>
+        </tr>
+
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

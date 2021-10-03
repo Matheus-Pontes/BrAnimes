@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ex05</title>
+</head>
+<body>
+    <div class="container">
+        <div class="abas">
+            <button id='abaCronometro'>Cronômetro</button>
+            <button id='abaSlideShow'>Slide Show</button>
+            <button id='abaTabuada'>Tabuada</button>
+        </div>
+
+        <div class='main'>
+            <div class="abaCronometro">
+                <div class="cronometro">
+                    <span id='timer'>0</span>
+                </div>
+            </div>
+            <div class='abaSlideShow'>
+                <div class="figures">
+                    <img src="https://source.unsplash.com/random?id=07" />
+                </div>
+
+                <div class="buttons">
+                    <button id='buttonAfter'>Anterior</button>
+                    <button id='buttonBefore'>Próximo</button>
+                </div>
+            </div>
+            <div class="abaTabuada">
+                <p>Digite o número da tabuada que deseja calcular</p>
+
+                <input type="text" id='numberTabuada'>
+                <button id='calculaTabuada'>Calcular</button>
+
+                <div class="res">
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 # Projetos e Exercícios
-- Projetos, relizados nas aulas de Aplicações para Web no curso de Ciências da Computação 1º Semestre
+- Projetos e exercícios realizados nas aulas do curso de Ciências da Computação.
 ## :rocket: Tecnologias
 - HTML
 - CSS

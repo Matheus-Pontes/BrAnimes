@@ -39,20 +39,20 @@ document.querySelector('#confirm').addEventListener('click', () => {
 document.querySelector('#exibirDados').addEventListener('click', () => {
     let tr = document.createElement('tr');
     exibindoDados.appendChild(tr);
-
+    
     dados.nome.forEach(nome => {
-        let td = document.createElement('td');
-        td.textContent = nome;
-        tr.appendChild(td);
-        
+        tdNome.textContent = nome;
+        tr.appendChild(tdNome);
     });
     
     dados.rgm.forEach(rgm => {
-        let td = document.createElement('td');
-        td.textContent = rgm;
-        tr.appendChild(td);
+        tdRGM.textContent = rgm;
+        tr.appendChild(tdRGM);
     });
 
+    dados.notaExercicios.forEach(el => {
+        
+    });
 
 });
 

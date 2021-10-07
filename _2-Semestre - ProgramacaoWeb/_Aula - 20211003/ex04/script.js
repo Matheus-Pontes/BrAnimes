@@ -1,32 +1,6 @@
 const display = document.querySelector('#numbers');
 const button = document.getElementsByTagName('button');
 
-const functions = {
-    somar(number1, number2) {
-        let soma = Number(number1) + Number(number2);
-        display.value = soma;
-    },
-
-    subtrair(number1, number2) {
-        let subtrai = Number(number1) - Number(number2);
-        display.value = subtrai;
-    },
-
-    multiplicar(number1, number2) {
-        let multiplica = Number(number1) * Number(number2);
-        display.value = multiplica;
-    },
-
-    dividir(number1, number2) {
-        if(number2 === 0){
-            display.value = 'Impossível dividir por 0';
-        } else {
-            let dividi = Number(number1) / Number(number2);
-            display.value = dividi;
-        }
-    }
-}
-
 const buttons = {
     changeSinalNumber: function() {
         display.value *= (-1);
@@ -81,24 +55,7 @@ const buttons = {
     },
 
     "equal": function() {
-       
-        let displayAux = display.value.split("");
-
-        console.log(displayAux);
-
-        displayAux.forEach((el, index) => {
-            console.log(el);
-            if(el === '+') {
-                functions.somar(displayAux[index - 1], displayAux[index + 1]);
-            } else if (el === '-'){
-                functions.subtrair(displayAux[index - 1], displayAux[index + 1])
-            } else if (el === '*') {
-                functions.multiplicar(displayAux[index - 1], displayAux[index + 1]);
-            } else if (el === '/'){
-                functions.dividir(displayAux[index - 1], displayAux[index + 1]);
-            }
-        });
-
+        display.value = eval(display.value);
     }
 }
 
@@ -109,4 +66,3 @@ for(let i = 0; i < button.length; i++ ) {
         }
     });
 }
-

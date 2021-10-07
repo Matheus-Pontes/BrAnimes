@@ -23,6 +23,9 @@ const buttons = {
     clearDisplay() {
         display.value = '';
     },
+    ponto() {
+        display.value += '.';
+    },
     "0": function() {
         display.value += 0;
     },
@@ -53,7 +56,6 @@ const buttons = {
     "9": function() {
         display.value += 9;
     },
-
     "equal": function() {
         display.value = eval(display.value);
     }

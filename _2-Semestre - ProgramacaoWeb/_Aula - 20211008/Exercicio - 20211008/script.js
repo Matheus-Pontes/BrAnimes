@@ -4,9 +4,41 @@ const conceito = {
     A: 'A', B: 'B', C: 'C', D: 'D', E: 'E'
 };
 
+const validaConceitos = (media) => {
+    let c;
+    media.forEach(element => {
+        if(element >= 8) {
+            c = conceito.A;
+        } else if (element >= 6 && element < 8) {
+            c = conceito.B;
+        } else if (element >= 5 && element < 6) {
+            c = conceito.C;
+        } else {
+            c = conceito.D;
+        }
+    });
+
+    return c;
+};
+
 let nomes = [];
 let rgm = [];
 let media = [];
+
+function setElementsLocalStorage(campo, dados) {
+    localStorage.setItem(campo, dados);
+}
+
+function getElementsLocalStorage() {
+
+    let dados = {
+        Nome: localStorage.getItem('Nome').split(','),
+        RGM: localStorage.getItem('RGM').split(','),
+        Media: localStorage.getItem('Media').split(','),
+    }
+
+    return dados;
+}
 
 function cadastrar() {
     
@@ -21,20 +53,7 @@ function cadastrar() {
     limpaCampos();
 };
 
-function setElementsLocalStorage(campo, dados) {
-    localStorage.setItem(campo, dados);
-}
 
-function getElementsLocalStorage() {
-
-    let objeto = {
-        Nome: localStorage.getItem('Nome').split(','),
-        RGM: localStorage.getItem('RGM').split(','),
-        Media: localStorage.getItem('Media').split(','),
-    }
-
-    return objeto;
-}
 
 const exibir = () => {
     let { Nome, RGM, Media } = getElementsLocalStorage();
@@ -44,15 +63,7 @@ const exibir = () => {
     let tdConceito;
 
     for(let i=0; i < Nome.length; i++) {
-        if(Media[i] >= 8) {
-            tdConceito = conceito.A;
-        } else if (Media[i] >= 6 && Media[i] < 8) {
-            tdConceito = conceito.B;
-        } else if (Media[i] >= 5 && Media[i] < 6) {
-            tdConceito = conceito.C;
-        } else {
-            tdConceito = conceito.D;
-        }
+        tdConceito = validaConceitos(Media);
         
         if(tbody) {
             tbody.innerHTML += ` 

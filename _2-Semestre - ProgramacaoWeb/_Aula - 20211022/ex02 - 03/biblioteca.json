@@ -1,0 +1,49 @@
+{
+    "biblioteca": [
+        {
+            "titulo": "Arsene Lupin, Ladrão de Casaca",
+            "autor": "Maurice Leblanc",
+            "edicao": "1º edição de 2021",
+            "anoDePublicação": "2021",
+            "editora": "Ciranda Cultural Editora e Distribuidora Ltda.",
+            "isbn": "978-65-552-230-3",
+            "capa": "https://m.media-amazon.com/images/I/61E-utM0yYL._AC_UY218_.jpg"
+        },
+        {
+            "titulo": "Código limpo: Habilidades práticas do Agile Software",
+            "autor": "Robert C. Martin",
+            "edicao": "1º edição de 2021",
+            "anoDePublicação": "2021",
+            "editora": "Ciranda Cultural Editora e Distribuidora Ltda.",
+            "isbn": "978-65-552-230-3",
+            "capa": "https://images-na.ssl-images-amazon.com/images/I/4153E2zZmTS._SX350_BO1,204,203,200_.jpg"
+        },
+        {
+            "titulo": "O Pure de Batatas",
+            "autor": "ABE HUBER",
+            "edicao": "Edição padrão",
+            "anoDePublicação": "2018",
+            "editora": "Ciranda Cultural Editora e Distribuidora Ltda.",
+            "isbn": "978-65-552-230-3",
+            "capa": "https://images-na.ssl-images-amazon.com/images/I/41aIGAGoPWL._SX331_BO1,204,203,200_.jpg"
+        },
+        {
+            "titulo": "Williams: A Different Kind of Life",
+            "autor": "Virginia Williams Ph.D",
+            "edicao": "1º edição de 2021",
+            "anoDePublicação": "2017",
+            "editora": "Ciranda Cultural Editora e Distribuidora Ltda.",
+            "isbn": "978-65-552-230-3",
+            "capa": "https://images-na.ssl-images-amazon.com/images/I/516fl45VxCL._SX331_BO1,204,203,200_.jpg"
+        },
+        {
+            "titulo": "Haikyu!!",
+            "autor": "Haruichi Furudate",
+            "edicao": "1º edição de 2021",
+            "anoDePublicação": "2021",
+            "editora": "Ciranda Cultural Editora e Distribuidora Ltda.",
+            "isbn": "978-65-552-230-3",
+            "capa": "https://images-na.ssl-images-amazon.com/images/I/5194hGDzKDL._SX327_BO1,204,203,200_.jpg"
+        }
+    ]
+}

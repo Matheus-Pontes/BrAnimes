@@ -1,0 +1,44 @@
+* {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.container {
+
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.content {
+    border-radius: 4px;
+    box-shadow: 0 0 4px #000;
+    text-align: center;
+}
+
+.imagem {
+    width: 200px;
+    height: 180px;
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+}
+
+.dados {
+    background: rgba(0,0,0,.8);
+    color: #fff;
+}
+
+.dados p {
+    margin: 0;
+    padding: .75rem .5rem;
+}
+
+.dados p:first-child {
+    background-color: #000;
+}

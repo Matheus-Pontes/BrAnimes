@@ -5,61 +5,68 @@ const resultado = document.querySelector('#resultado');
 
 document.querySelector('#calcular')
     .addEventListener('click', () => {
-
-        let IMC = (Number(peso.value) / (Number(altura.value)**2)).toFixed(2);
-
-        switch(sexo.value) {
-            case "1":
-                if(IMC < 19.1){
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está abaixo do peso.</h2>
-                    `;
-                } else if(IMC >= 19.1 && IMC < 25.8) {
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está no peso normal.</h2>
-                    `;
-                } else if(IMC >= 25.8 && IMC < 27.3) {
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está ligeiramente acima do peso.</h2>
-                    `;
-                } else if(IMC >= 27.3 && IMC < 32.3) {
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está acima do peso ideal.</h2>
-                    `;
-                } else if(IMC >= 32.3) {
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está OBESA.</h2>
-                    `;
-                }
-            break;
-            
-            case "2":
-                if(IMC < 20.7) {
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está abaixo do peso.</h2>
-                    `;
-                } else if(IMC >= 20.7 && IMC < 26.4) {
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está no peso normal.</h2>
-                    `;
-                } else if(IMC >= 26.4 && IMC < 27.8) {
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está ligeiramente acima do peso.</h2>
-                    `;
-                } else if(IMC >= 27.8 && IMC < 31.1) {
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está acima do peso ideal.</h2>
-                    `;
-                } else if (IMC >= 31.1) {
-                    resultado.innerHTML = `
-                        <h2>Seu IMC: ${IMC}[kg/m²]. Você está OBESO.</h2>
-                    `;
-                }
-            break;
-
-            default:
-                console.log('testes');
-                break;
-        }
+        calcular();
     }
 );
+
+const calcular = () => {
+    let IMC = (Number(peso.value) / (Number(altura.value)**2)).toFixed(2);
+
+    conceituaIMC(IMC);
+}
+
+const conceituaIMC = imc => {
+    switch(sexo.value) {
+        case "1":
+            if(imc < 19.1){
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está abaixo do peso.
+                `;
+            } else if(imc >= 19.1 && imc < 25.8) {
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está no peso normal.
+                `;
+            } else if(imc >= 25.8 && imc < 27.3) {
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está ligeiramente acima do peso.
+                `;
+            } else if(imc >= 27.3 && imc < 32.3) {
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está acima do peso ideal.
+                `;
+            } else if(imc >= 32.3) {
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está OBESA.
+                `;
+            }
+        break;
+        
+        case "2":
+            if(imc < 20.7) {
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está abaixo do peso.
+                `;
+            } else if(imc >= 20.7 && imc < 26.4) {
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está no peso normal.
+                `;
+            } else if(imc >= 26.4 && imc < 27.8) {
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está ligeiramente acima do peso.
+                `;
+            } else if(imc >= 27.8 && imc < 31.1) {
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está acima do peso ideal.
+                `;
+            } else if (imc >= 31.1) {
+                resultado.innerHTML = `
+                    Seu IMC: ${imc}[kg/m²]. Você está OBESO.
+                `;
+            }
+        break;
+
+        default:
+            resultado.innerHTML = `Selecione um Sexo.`
+            break;
+    }
+}

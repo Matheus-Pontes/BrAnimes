@@ -1,0 +1,30 @@
+* { font-family: sans-serif;}
+div#tabela {
+    margin: 10px auto;
+    width: 600px; 
+}
+
+table, tr, td {
+    width: 100%;
+    border: 1px solid hsl(0, 0%, 63%);
+    border-collapse: collapse;
+}
+
+td {
+    padding: .75rem;
+}
+
+tr { 
+    background-color: #fefe;
+}
+
+tr:nth-child(even) {
+    background-color: #666;
+    color: #fefefe;
+}
+
+tr:hover {
+    transform: scale(1.2);
+    transition: .8s all;
+    cursor: pointer;
+}

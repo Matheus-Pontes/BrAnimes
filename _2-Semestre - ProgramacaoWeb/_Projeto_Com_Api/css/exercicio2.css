@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#estatisticas {
+    margin: auto;
+    width: 800px;
+
+}
+
+span {
+    display: inline-block;
+    padding: .15rem;
+}
+
+#table {
+    width: 800px;
+    margin: auto;
+}
+
+.header {
+    background: #333;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0.85rem 0.25rem;
+    width: 200px;
+}
+
+tr:nth-child(even) {
+    background-color: #ccc;
+}

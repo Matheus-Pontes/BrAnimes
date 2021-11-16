@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Padaria>
+    <Item codigo="1">
+        <produto>Pão</produto>
+        <quantidade>10</quantidade>
+        <valor>4.00</valor>
+        <data_vencimento>2021/11/12</data_vencimento>
+        <peso>0,6kg</peso>
+    </Item>
+    <Item codigo="2">
+        <produto>Mortadela</produto>
+        <quantidade>20</quantidade>
+        <valor>5.00</valor>
+        <data_vencimento>2021/11/12</data_vencimento>
+        <peso>0,6kg</peso>
+    </Item>
+    <Item codigo="3">
+        <produto>Mussarela</produto>
+        <quantidade>10</quantidade>
+        <valor>4.00</valor>
+        <data_vencimento>2021/11/12</data_vencimento>
+        <peso>0,6kg</peso>
+    </Item>
+
+    <Item codigo="4">
+        <produto>Presunto</produto>
+        <quantidade>10</quantidade>
+        <valor>4.00</valor>
+        <data_vencimento>2021/11/12</data_vencimento>
+        <peso>0,6kg</peso>
+    </Item>
+    <Item codigo="5">
+        <produto>Trakinas</produto>
+        <quantidade>10</quantidade>
+        <valor>20.00</valor>
+        <data_vencimento>2022/05/08</data_vencimento>
+        <peso>0,6kg</peso>
+    </Item>
+    <Item codigo="6"> 
+        <produto>Manteiga - Qualy</produto>
+        <quantidade>1</quantidade>
+        <valor>7.00</valor>
+        <data_vencimento>2023/11/20</data_vencimento>
+        <peso>1kg</peso>
+    </Item>
+</Padaria>

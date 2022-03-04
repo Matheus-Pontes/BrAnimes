@@ -1,4 +1,3 @@
-package Ex01;
 import javax.swing.*;
 
 public class Program 

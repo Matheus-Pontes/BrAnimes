@@ -11,10 +11,9 @@ for(let i=0; i < quantidadeDeValores; i++) {
 }
 
 function setup() {
-
     for(let i=0; i < quantidadeDeValores; i++){
         desorder.innerHTML += `
-        <div class="teste" style="height: ${heights[i]}px">${heights[i]}</div>
+            <div class="column" style="height: ${heights[i]}px"></div>
         `;
     }
 
@@ -25,7 +24,7 @@ function draw() {
     order.innerHTML = "";
     for(let i=0; i < quantidadeDeValores; i++){
         order.innerHTML += ` 
-        <div class="teste" style="height: ${heights[i]}px">${heights[i]}</div>
+            <div class="column" style="height: ${heights[i]}px"></div>
         `;
     }
 }

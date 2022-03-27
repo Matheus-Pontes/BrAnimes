@@ -6,8 +6,11 @@
     - HTML
     - CSS
     - JavaScript
-- 3 Semestre até o momento:
-    - Java
+- 3 Semestre:
+    - Estrutura de dados
+        - Algoritmos de ordenação(Java) e com visualização no front-end sendo a pasta src/ dentro de cada pasta dos algoritmos. 
+    - POO
+        - Alguns exercícios e exemplos com Java
 
 ## Ferramentas :gear:
 - [VScode - versão stable](https://code.visualstudio.com/) 

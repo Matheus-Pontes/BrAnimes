@@ -1,4 +1,3 @@
-// Preparar código para visualização de como está se comportando do algoritmo
 
 const desorder = document.getElementById("disorder");
 const order = document.getElementById("order");

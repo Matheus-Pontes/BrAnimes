@@ -9,6 +9,8 @@
 - 3 Semestre:
     - Estrutura de dados
         - Algoritmos de ordenação(Java) e com visualização no front-end sendo a pasta src/ dentro de cada pasta dos algoritmos. 
+        - Para a visualização dos algortimos, utilizei a biblioteca do javascript chamada p5.js
+            - [Documentação](https://p5js.org/get-started/)
     - POO
         - Alguns exercícios e exemplos com Java
 

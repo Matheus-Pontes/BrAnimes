@@ -1,5 +1,3 @@
-// Utilizando o P5.js para conseguir fazer efeito de movimentação do algoritmo
-
 const quantidadeDeValores = 50;
 var w = 10;
 var heights = [];

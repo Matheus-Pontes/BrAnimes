@@ -1,5 +1,3 @@
-// Preparar código para visualização de como está se comportando do algoritmo
-
 const desorder = document.getElementById("disorder");
 const order = document.getElementById("order");
 const quantidadeDeValores = 15;
@@ -16,7 +14,6 @@ function setup() {
             <div class="column" style=" height: ${heights[i]}px"></div>
         `
     }
-
     setTimeout(() => {
         selectionSort(heights);
 
@@ -24,7 +21,6 @@ function setup() {
 }
 
 function draw() {
-    // Desenha a ordenação
     order.innerHTML = "";
     for(let i=0; i < heights.length; i++) {
         

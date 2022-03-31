@@ -1,4 +1,3 @@
-
 const desorder = document.getElementById("disorder");
 const order = document.getElementById("order");
 const quantidadeDeValores = 15;

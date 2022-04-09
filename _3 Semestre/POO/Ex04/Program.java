@@ -16,6 +16,7 @@ public class Program
         
         circuferencia1 = new Circuferencia(raioDaCircunferencia);
         
+        // Dados da circunferencia
         circuferencia1.mostraDados();
         
         read.nextLine();
@@ -32,6 +33,7 @@ public class Program
         
         retangulo1 = new Retangulo(baseDoRetangulo, alturaDoRetangulo);
         
+        // Dados do retângulo
         retangulo1.mostraDados();
     }
 }

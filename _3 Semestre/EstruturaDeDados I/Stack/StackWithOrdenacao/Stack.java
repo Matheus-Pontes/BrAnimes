@@ -46,7 +46,6 @@ public class Stack implements IStack
             return null;
         
         Object valor = top.getValue();
-        Node temp = top;
         top = top.getNext();
         this.count--;
         return valor;
@@ -80,6 +79,4 @@ public class Stack implements IStack
         else    
             return ("Stack: [ ]");
     }
-
-
 }

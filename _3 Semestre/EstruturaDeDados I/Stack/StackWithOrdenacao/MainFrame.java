@@ -132,11 +132,11 @@ public class MainFrame extends JFrame implements ActionListener
             System.out.println(stackCopy.getCount());
             Object[] trabalhador = new Object[stackCopy.getCount()];
 
-            for(int i=0; i <= stackCopy.getCount() + 1; i++) 
+            for(int i=0; i <= stackCopy.getCount(); i++) 
             {
                 trabalhador[i] = stackCopy.top();
                 
-                if(!stack.isEmpty())
+                if(!stackCopy.isEmpty())
                     stackCopy.pop();
             }
 
@@ -146,6 +146,31 @@ public class MainFrame extends JFrame implements ActionListener
         else if (e.getActionCommand().equals("ordenar")) 
         {
             System.out.println("Ordenar");
+            Stack stackCopy = stack;
+            System.out.println(stackCopy.getCount());
+            Trabalhador[] trabalhador = new Trabalhador[stackCopy.getCount()];
+
+            for(int i=0; i <= stackCopy.getCount() + 1; i++) 
+            {
+                trabalhador[i] = (Trabalhador) stackCopy.top();
+                
+                if(!stackCopy.isEmpty())
+                    stackCopy.pop();
+            }
+
+            if (trabalhador != null)   
+                bubbleSort(trabalhador);
+            
+            String resultAux = "";
+
+            for(var i : trabalhador)
+                resultAux += i.toString();
+                
+            results.setText("Valores ordenados: " + resultAux);
+            panelResults.add(results);
+            
+            for(var i : trabalhador)
+                System.out.println("Resultado: " + i);
         }
     }
 
@@ -154,5 +179,20 @@ public class MainFrame extends JFrame implements ActionListener
         txtNome.setText("");
         txtSalario.setText("");
         txtSexo.setText("");
+    }
+
+    public void bubbleSort(Trabalhador[] vetor) 
+    {
+        for (int i = 0; i < vetor.length - 1; i++) {
+            for (int j = 0; j < vetor.length - 1 - i; j++) {
+              if (vetor[j].getNome().compareTo(vetor[j+1].getNome()) > 0) {
+                    //A comparação anterior funciona porque as classes Integer, 
+                    //Double e AtletaVelocidade possuem o método compareTo.
+                    Trabalhador tmp = vetor[j];
+                    vetor[j] = vetor[j+1];
+                    vetor[j+1] = tmp;
+               }
+            }
+        }
     }
 }

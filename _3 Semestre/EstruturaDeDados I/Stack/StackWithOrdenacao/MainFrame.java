@@ -6,20 +6,24 @@ import javax.swing.*;
 
 public class MainFrame extends JFrame implements ActionListener 
 {
+    JTextField txtNome, txtSalario, txtSexo;
+    JLabel results;
+    JPanel panelResults;
+    Stack stack = new Stack();
+
     public void initialize() 
     {
-        
         // Nome
         JLabel labelNome = new JLabel("Nome: ");
-        JTextField txtNome = new JTextField();
+        txtNome = new JTextField();
 
         // Salário
         JLabel labelSalario = new JLabel("Salario R$ ");
-        JTextField txtSalario = new JTextField();
+        txtSalario = new JTextField();
         
         // Sexo
         JLabel labelSexo = new JLabel("Sexo: ");
-        JTextField txtSexo = new JTextField();
+        txtSexo = new JTextField();
 
         // Botão de adicionar um trabalhador a pilha 
         JButton btnAdicionar = new JButton("Adicionar");
@@ -56,9 +60,10 @@ public class MainFrame extends JFrame implements ActionListener
         btnExtrairParaVisulizacao.addActionListener(this);
         btnOrdenar.addActionListener(this);
 
-        JLabel results = new JLabel("RESULTADOS: ");
-        JPanel panelResults = new JPanel();
-        panelResults.setLayout(new GridLayout(29, 1));
+        results = new JLabel("RESULTADOS: ");
+        results.setLayout(new GridLayout(20, 5, 5, 5));
+        panelResults = new JPanel();
+        panelResults.setLayout(new GridLayout(20, 1, 5, 5));
         panelResults.add(results);
 
         JPanel formPanel = new JPanel();
@@ -89,15 +94,65 @@ public class MainFrame extends JFrame implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equals("adicionar"))
-            System.out.println("Adicionar");
+
+        if (e.getActionCommand().equals("adicionar")) 
+        {
+            if(txtNome.getText() != "" && txtSalario.getText() != "" && txtSexo.getText() != "") 
+            {
+                stack.push(new Trabalhador(txtNome.getText(), Float.parseFloat(txtSalario.getText()), txtSexo.getText().charAt(0)));
+                results.setText("Valores adicionado a lista.");
+                panelResults.add(results);
+                cleanFields();
+            }
+            else {
+                results.setText("Campos: Nome, Salário e Sexo. São obrigatóriosS");
+                panelResults.add(results);  
+            }
+        }
         else if (e.getActionCommand().equals("listar"))
-            System.out.println("Listar");
-        else if (e.getActionCommand().equals("retirar"))
-            System.out.println("Retirar");
-        else if (e.getActionCommand().equals("extrair"))
+        {
+            System.out.println(stack.toString());
+            results.setText("Valores da pilha: " + "\n" + stack.toString());
+            panelResults.add(results);
+        }
+        else if (e.getActionCommand().equals("retirar")) 
+        {
+            stack.pop();
+            System.out.println("Valor retirado da pilha !!!");
+            results.setText(
+                "Valor retirado da pilha: " + "\n" + stack.toString()
+            );
+            panelResults.add(results);
+        }
+        else if (e.getActionCommand().equals("extrair")) 
+        {
             System.out.println("Extrair");
-        else if (e.getActionCommand().equals("ordenar"))
+            
+            Stack stackCopy = stack;
+            System.out.println(stackCopy.getCount());
+            Object[] trabalhador = new Object[stackCopy.getCount()];
+
+            for(int i=0; i <= stackCopy.getCount() + 1; i++) 
+            {
+                trabalhador[i] = stackCopy.top();
+                
+                if(!stack.isEmpty())
+                    stackCopy.pop();
+            }
+
+            for(var i : trabalhador)
+                System.out.println("Resultado: " + i);
+        }
+        else if (e.getActionCommand().equals("ordenar")) 
+        {
             System.out.println("Ordenar");
+        }
+    }
+
+    public void cleanFields() 
+    {
+        txtNome.setText("");
+        txtSalario.setText("");
+        txtSexo.setText("");
     }
 }

@@ -3,7 +3,7 @@ public class Queue implements IQueue
     private int total = 0;
     private int head = -1;
     private int tail = -1;
-    private Object queue[];
+    private Filmes queue[];
     private int MAX;
 
     Queue() {};
@@ -11,7 +11,7 @@ public class Queue implements IQueue
     public Queue(int max) 
     {
         this.MAX = max;
-        this.queue = new Object[MAX];
+        this.queue = new Filmes[MAX];
         total = 0;
         head = -1;
         tail = -1;
@@ -25,11 +25,19 @@ public class Queue implements IQueue
         MAX = mAX;
     }
 
+    public Filmes[] getQueue() {
+        return queue;
+    }
+
+    public void setQueue(Filmes[] queue) {
+        this.queue = queue;
+    }
+
     @Override
-    public Object dequeue() {
+    public Filmes dequeue() {
         if (!isEmpty()) 
         {
-            Object objeto = queue[head];
+            Filmes objeto = queue[head];
             if(++head >= MAX)
                 head = 0;
             total--;
@@ -47,7 +55,7 @@ public class Queue implements IQueue
     }
 
     @Override
-    public Object enqueue(Object x) 
+    public Filmes enqueue(Filmes x) 
     {
         if(!isFull() && x != null)
         {
@@ -103,7 +111,7 @@ public class Queue implements IQueue
                     pos = 0;
            }
 
-           return ("F: " + " [ " + saida + " ] ");
+           return ("F: " + "[ " + saida + " ] ");
        }
        else 
        {

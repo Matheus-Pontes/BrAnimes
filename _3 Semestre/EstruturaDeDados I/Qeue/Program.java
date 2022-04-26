@@ -33,9 +33,13 @@ public class Program
                     System.out.println("===================================");
                     System.out.println("Listando os valores dentro da FILA.");
                     System.out.println("===================================");
-                    System.out.print(fila.toString());
+                    System.out.println(fila.toString());
                     break;
                 case 3:
+                    System.out.println("========================");
+                    System.out.println("Retirando até achar AÇÃO");
+                    System.out.println("========================");
+                    Util.retirarDaFilaAcao(fila);
                     break;
             }
             

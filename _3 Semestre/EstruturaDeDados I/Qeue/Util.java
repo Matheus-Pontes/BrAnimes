@@ -46,4 +46,15 @@ public class Util
             );
         }
     }
+
+    public static void retirarDaFilaAcao(Queue fila) 
+    {
+        for(int i=0; i < fila.getQueue().length; i++) 
+        {
+            if(fila.getQueue()[i].getGender().equalsIgnoreCase("Ação")) 
+            {
+                System.out.println(fila.dequeue());
+            }
+        }
+    }
 }

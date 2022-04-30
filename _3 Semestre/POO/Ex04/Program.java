@@ -4,6 +4,8 @@ public class Program
 {
     public static void main(String[] args) 
     {
+        System.out.println("testando");
+        
         Circuferencia circuferencia1; 
         Retangulo retangulo1; 
         

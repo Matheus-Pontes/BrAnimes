@@ -1,0 +1,23 @@
+:root {
+    --white: #fff;
+    --blue: #2667FF;
+    --red: #F21919;
+    --green: #04E762;
+    --black: #000;
+    --blackStack: #212721;
+}
+
+body {
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    font-family: sans-serif;
+}
+
+h4, p {
+    color: var(--white);
+    text-align: center;
+    line-height: 12px;
+}

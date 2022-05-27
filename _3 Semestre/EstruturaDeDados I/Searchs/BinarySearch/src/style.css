@@ -1,0 +1,74 @@
+body {
+    background: #212127;
+}
+
+.fieldNumbers, .fieldActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 25px;
+}
+
+.fieldActions {
+    flex-wrap: wrap;
+}
+
+.number {
+    width: 5rem;
+    padding: 1rem;
+    height: 2.5rem;
+    color: #fff;
+    border-radius: .75rem;
+    font-size: 24pt;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+#btnOrdenary {
+    background: rgb(43, 148, 43);
+    border: none;
+    padding: 1rem;
+    color: #fff;
+    border-radius: 4px;
+}
+
+#btnOrdenary:hover {
+    opacity: .8;
+    cursor: pointer; 
+}
+
+#lblNumber {
+    color: #fff;
+    font-size: 16pt;
+    font-family: sans-serif;
+}
+
+#txtNumber {
+    border: none;
+    border-bottom: 2px solid rgb(43, 121, 238);
+    background: #212127;
+    padding: 1rem 0 1rem .55rem;
+    width: 80px;
+    color: #fff;
+    font-size: 16pt;
+    text-align: center;
+}
+
+#btnSearch {
+    background: rgb(43, 121, 238);
+    border: none;
+    padding: 1rem;
+    color: #fff;
+    border-radius: 4px;
+}
+
+#btnSearch:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+#result {
+    color: #fff;
+    font-size: 18pt;
+}

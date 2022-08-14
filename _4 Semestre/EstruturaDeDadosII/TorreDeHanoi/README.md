@@ -20,7 +20,7 @@
 
 <p align='center'>------ Jogo Usando HTML/CSS/JS ------</p>
 
-![image](https://user-images.githubusercontent.com/62751571/184517884-1c06853b-88b1-480c-a94c-5e85646abdc0.png)
+![image](https://user-images.githubusercontent.com/62751571/184538285-48af9fa1-b00a-463d-9c59-74713e3662ba.png)
 
 ## Techs 
 - Java

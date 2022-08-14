@@ -18,5 +18,10 @@
 <p align='center'><code>Movendo disco: 2 da base B para C</code></p>
 <p align='center'><code>Movendo disco: 1 da base A para C</code></p> 
 
+<p align='center'>------ Jogo Usando HTML/CSS/JS ------</p>
+
+![image](https://user-images.githubusercontent.com/62751571/184517884-1c06853b-88b1-480c-a94c-5e85646abdc0.png)
+
 ## Techs 
 - Java
+- HTML/CSS/JS

@@ -13,6 +13,9 @@
             - [Documentação](https://p5js.org/get-started/)
     - POO
         - Alguns exercícios e exemplos com Java
+- 4 Semestre: 
+    - Estrutura de dados II
+    - Banco de dados
 
 ## Ferramentas :gear:
 - [VScode - versão stable](https://code.visualstudio.com/) 

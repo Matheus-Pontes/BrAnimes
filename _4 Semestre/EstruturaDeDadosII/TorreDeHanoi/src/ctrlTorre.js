@@ -3,14 +3,15 @@ const $piece1 = document.querySelector('#piece1');
 const $piece2 = document.querySelector('#piece2');
 const $piece3 = document.querySelector('#piece3');
 const $estacas = document.querySelectorAll('.estacas');
+const $btnRestartGame = document.querySelector('#btnRestartGame');
 
 const Positions = {
     top: {
-        sm: 'top: 40px;',
-        md: 'top: 60px;',
-        lg: 'top: 80px;',
+        sm: 'top: 84px;',
+        md: 'top: 116px;',
+        lg: 'top: 148px;',
     }
-};
+};  
 
 const MovePiece = {
     drag: function($element) {
@@ -28,6 +29,15 @@ const MovePiece = {
         $piece.style = style;
         $piece.parentNode.removeChild($piece);
         event.target.appendChild($piece);
+    },
+    restartPositionStakeFirst: function() {
+        $piece1.style = Positions.top.sm
+        $piece2.style = Positions.top.md
+        $piece3.style = Positions.top.lg
+        
+        document.querySelector('#stake1').append($piece1);
+        document.querySelector('#stake1').append($piece2);
+        document.querySelector('#stake1').append($piece3);
     }
 }
 
@@ -60,7 +70,7 @@ $estacas.forEach(item => {
                 let peca3 = e.target.querySelector('.peca3');
                                
                 let temPeca2e3 = peca3 && peca2 ? true : false;
-
+                
                 if(peca1) {
                     alert('Atenção as regras !!! ');
                 }
@@ -72,10 +82,14 @@ $estacas.forEach(item => {
                 }
                 else {
                     MovePiece.putPieceInStake(e, piece, Positions.top.md);
-                }                
+                }
+
             } else {
                 MovePiece.putPieceInStake(e, piece, Positions.top.lg);
             }
         }
     });
+
 });
+
+$btnRestartGame.addEventListener('click', MovePiece.restartPositionStakeFirst);

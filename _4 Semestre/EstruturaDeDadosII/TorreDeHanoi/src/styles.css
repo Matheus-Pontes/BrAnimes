@@ -7,6 +7,7 @@
     --green: #04E762;
     --black: #000;
     --blackLight: #212721;
+    --yellow: #ffcf00;
 }
 
 * {
@@ -30,6 +31,16 @@ header ul {
     list-style: none;
 }
 
+#btnRestartGame {
+    padding: .55rem .95rem;
+    border-radius: 4px;
+    background-color: var(--yellow);
+    color: var(--black);
+    font-weight: bolder;
+    cursor: pointer;
+
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -39,18 +50,18 @@ main {
 }
 
 .base {
-    width: 500px;
+    width: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 150px;
+    gap: 250px;
     border-radius: 6px;
     border-bottom: 10px solid var(--blackLight);
 }
 
 .base .estacas {
-    height: 100px;
-    padding: .25rem;
+    height: 180px;
+    padding: 0.25rem;
     background-color: var(--blackLight);
     border: 0;
     position: relative;
@@ -59,26 +70,26 @@ main {
 .peca {
     position: absolute;
     z-index: 10;
-    top: 80px;
-    width: 100px;
-    left: -46px;
-    padding: .63rem;
+    top: 148px;
+    width: 200px;
+    left: -96px;
+    padding: 1rem;
     background-color: var(--green);
     border-radius: 2px;
     cursor: pointer;
 }
 
 .peca1 {
-    top: 40px;
-    width: 25px;
-    left: -8px;
+    top: 84px;
+    width: 100px;
+    left: -45px;
     background-color: var(--blue);
 }
 
 .peca2 {
-    top: 60px;
-    width: 50px;
-    left: -21px;
+    top: 116px;
+    width: 150px;
+    left: -71px;
     background-color: var(--red);
 }
 

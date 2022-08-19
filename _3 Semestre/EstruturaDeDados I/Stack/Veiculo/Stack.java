@@ -7,7 +7,7 @@ public class Stack implements IStack
     // Constructor padrão, ja pré-definido
     Stack() 
     {
-        TOP = -1;
+        TOP = -1; // topo da pilha
         MAX = 30;
         stack = new Object[MAX];
     }
@@ -38,7 +38,8 @@ public class Stack implements IStack
     {
         if(!isFull()) 
         {
-            stack[++TOP] = x;
+            stack[++TOP] = x; // soma 1 na variavel TOP e o elemento vai ser colocado após isso 
+            // então se começa no -1 ao passar por aqui na primeira chamada vai ser 0 e ai o elemento vai ser colocado na posição 0
             return x;
         }
         return null;
@@ -55,7 +56,6 @@ public class Stack implements IStack
     {
         return !isEmpty() ? stack[TOP] : null;
     }
-
 
     public String toString () {
         if(!isEmpty()) {

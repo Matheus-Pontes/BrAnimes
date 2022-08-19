@@ -19,6 +19,7 @@ public class Program
         
         // Esvaziando pilha
         System.out.print("Esvaziando pilha...");
+        
         while ( !stack.isEmpty() ) {
             stack.pop();
         }
@@ -27,11 +28,11 @@ public class Program
         {
             timer.scheduleAtFixedRate(new TimerTask() 
             {
-                int i = 50;
+                int time = 50; // Para simular o tempo
                 public void run() {
-                    i--;
+                    time--;
 
-                    if(i == 0)
+                    if(time == 0)
                     {
                         timer.cancel();
                         System.out.println("A pilha está vazia, processo concluído!");

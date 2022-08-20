@@ -6,6 +6,10 @@ const $btnRemove = document.querySelector('#btnRemove');
 
 const stack = new Stack();
 
+function lockOrUnlockButton(isLock, $button) {
+    isLock ? $button.classList.add('readonly') : $button.classList.remove('readonly');
+}
+
 const stackState = {
     'empty': { text: 'Vazia', color: '#04E762'},
     'full': { text: 'Cheia', color: '#F21919'},
@@ -17,7 +21,7 @@ const stackState = {
     verifyState(isFull) {
         if(isFull) {
             stackState.setState($stackState, 'full'); 
-            $btnInsert.classList.add('readonly');
+            lockOrUnlockButton(true, $btnInsert);
         }
     }
 };
@@ -38,7 +42,7 @@ $btnRemove.addEventListener('click', () => {
     if($stackChildrens.length == 1) {
         stackState.setState($stackState, 'empty');
     } else {
-        $btnInsert.classList.remove('readonly');
+        lockOrUnlockButton(false, $btnInsert);
         stackState.setState($stackState, 'haveSpace');
     }
 });

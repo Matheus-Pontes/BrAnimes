@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="js/Queue.js"></script>
     <title>Queue - Fila - Simulação</title>
 </head>
 <body>
@@ -23,17 +24,13 @@
             <button id="btnInsert"><i class="fa fa-plus-circle"></i></button>
         </div>
 
-        <section id="listTasks">
-            <div class="task">
-                <span>Escovar os dentes</span>
-                <button id="btnFinish"><i class="fa fa-minus-circle"></i></button>
-            </div>
-            
-        </section>
+        <section id="listTasks"></section>
     </main>
 
     <footer>
-        Desenvolvido por Matheus Pontes
+        <a href="https://github.com/Matheus-Pontes">Desenvolvido por Matheus Pontes
     </footer>
+
+    <script src="js/ctrlTodo.js" defer></script>
 </body>
 </html>

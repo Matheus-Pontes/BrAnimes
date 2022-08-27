@@ -1,18 +1,18 @@
 public class NodeTree<T> {
-    private T root; // Root -> raiz
+    private T data;
 
     private NodeTree<T> left;
     private NodeTree<T> right;
 
-    public NodeTree(T root) 
+    public NodeTree(T data) 
     {
-        this.root = root;
+        this.data = data;
     }
 
     public NodeTree() { }
 
-    public T getRoot() {
-        return root;
+    public T getData() {
+        return data;
     }
 
     public NodeTree<T> getLeft() {
@@ -23,8 +23,8 @@ public class NodeTree<T> {
         return right;
     }
 
-    public void setRoot(T root) {
-        this.root = root;
+    public void setData(T data) {
+        this.data = data;
     }
 
     public void setLeft(NodeTree<T> left) {
@@ -42,10 +42,10 @@ public class NodeTree<T> {
             if(node.left == null)
             {
                 node.left = new NodeTree<T>(data);
-                System.out.println("Inserindo " + data + " a esquerda de " + node.root);
+                System.out.println("Inserindo " + data + " a esquerda de " + node.data);
             } else {
                 if (node.right == null) {
-                    System.out.println("Inserindo " + data + " a direita de " + node.root);
+                    System.out.println("Inserindo " + data + " a direita de " + node.data);
                     node.right = new NodeTree<T>(data);
                 }
             } 

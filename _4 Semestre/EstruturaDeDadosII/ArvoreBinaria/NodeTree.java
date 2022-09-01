@@ -34,21 +34,4 @@ public class NodeTree<T> {
     public void setRight(NodeTree<T> right) {
         this.right = right;
     }
-    
-    public void InsertTree(NodeTree<T> node, T data) 
-    {
-        if(node != null) 
-        {
-            if(node.left == null)
-            {
-                node.left = new NodeTree<T>(data);
-                System.out.println("Inserindo " + data + " a esquerda de " + node.data);
-            } else {
-                if (node.right == null) {
-                    System.out.println("Inserindo " + data + " a direita de " + node.data);
-                    node.right = new NodeTree<T>(data);
-                }
-            } 
-        } 
-    }
 }

@@ -50,4 +50,38 @@ public class BinaryTree
 
         return node;
     }
+
+    // Metodos de percorrer atravessamentos
+    public void AtravessamentoEmOrdem(NodeTree<Integer> node) 
+    {
+        if(node != null) 
+        {
+            // esquerda, raíz, direita
+            AtravessamentoEmOrdem(node.getLeft());
+            System.out.print(node.getData() + " | ");
+            AtravessamentoEmOrdem(node.getRight());
+        }   
+    }
+
+    public void AtravessamentoPreOrdem(NodeTree<Integer> node) 
+    {
+        // Raíz, Esquerda, Direita
+        if(node != null) 
+        {
+            System.out.print(node.getData() + " | ");
+            AtravessamentoPreOrdem(node.getLeft());
+            AtravessamentoPreOrdem(node.getRight());
+        }
+    }
+
+    public void AtravessamentoPosOrdem(NodeTree<Integer> node) 
+    {
+        // Esquerda, Direita, Raíz
+        if(node != null) 
+        {
+            AtravessamentoPosOrdem(node.getLeft());
+            AtravessamentoPosOrdem(node.getRight());
+            System.out.print(node.getData() + " | ");
+        }
+    }
 }

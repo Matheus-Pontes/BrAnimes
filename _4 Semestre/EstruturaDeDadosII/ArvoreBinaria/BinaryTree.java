@@ -51,6 +51,62 @@ public class BinaryTree
         return node;
     }
 
+    // Remoção
+    public void RemoveBinaryTree(int data, NodeTree<Integer> node) 
+    {
+        this.root = RemoveNode(data, node);
+    }
+
+    private NodeTree<Integer> RemoveNode(int data, NodeTree<Integer> node) 
+    {
+        if(node == null)
+            return node;
+        
+        if(data < node.getData())
+            node.setLeft(RemoveNode(data, node.getLeft()));
+        else if (data > node.getData())
+            node.setRight(RemoveNode(data, node.getRight()));
+        else 
+        {
+            if(node.getLeft() == null) 
+                return node.getRight();
+            else if (node.getRight() == null)
+                return node.getLeft();
+            else 
+            {
+                int valueToSubstitute = MinusNodeValue(node.getRight()).getData();
+                node.setData(valueToSubstitute);
+                node.setRight(RemoveNode(valueToSubstitute, node.getRight()));
+            }
+        }
+
+        return node;
+    }
+
+        // Nó com o menor valor a esquerda
+        public NodeTree<Integer> MinusNodeValue(NodeTree<Integer> node) 
+        {
+            if (node == this.root) 
+                node = this.root;
+    
+            if (node.getLeft() != null)
+                node = MinusNodeValue(node.getLeft());
+    
+            return node;
+        }
+    
+        // Nó com o maior valor a direita
+        public NodeTree<Integer> MaxNodeValue(NodeTree<Integer> node) 
+        {
+            if (node == this.root)
+                node = this.root;
+    
+            if (node.getRight() != null) 
+                node = MaxNodeValue(node.getRight());
+            
+            return node;
+        }   
+
     // Metodos de percorrer atravessamentos
     public void AtravessamentoEmOrdem(NodeTree<Integer> node) 
     {

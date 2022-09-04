@@ -83,29 +83,63 @@ public class BinaryTree
         return node;
     }
 
-        // Nó com o menor valor a esquerda
-        public NodeTree<Integer> MinusNodeValue(NodeTree<Integer> node) 
+    // Nó com o menor valor a esquerda
+    public NodeTree<Integer> MinusNodeValue(NodeTree<Integer> node) 
+    {
+        if (node == this.root) 
+            node = this.root;
+
+        if (node.getLeft() != null)
+            node = MinusNodeValue(node.getLeft());
+
+        return node;
+    }
+
+    // Nó com o maior valor a direita
+    public NodeTree<Integer> MaxNodeValue(NodeTree<Integer> node) 
+    {
+        if (node == this.root)
+            node = this.root;
+
+        if (node.getRight() != null) 
+            node = MaxNodeValue(node.getRight());
+        
+        return node;
+    }   
+
+    // Busca
+    public boolean SearchBinaryTree(Integer data, NodeTree<Integer> node) 
+    {
+        if(node == null) 
+            return false;
+
+        if(data == node.getData())  
+            return true;
+        
+        if (data < node.getData())
+            return SearchBinaryTree(data, node.getLeft()); 
+        else 
+            return SearchBinaryTree(data, node.getRight());
+    }
+
+    // Altura da arvore
+    public int HeightBinaryTree(NodeTree<Integer> node) 
+    {
+        int heightLeft = 0, heightRight = 0;
+
+        if (node != null) 
         {
-            if (node == this.root) 
-                node = this.root;
-    
-            if (node.getLeft() != null)
-                node = MinusNodeValue(node.getLeft());
-    
-            return node;
+            if(node.getLeft() != null) 
+                heightLeft = HeightBinaryTree(node.getLeft());
+            if(node.getRight() != null)
+                heightRight = HeightBinaryTree(node.getRight());    
         }
-    
-        // Nó com o maior valor a direita
-        public NodeTree<Integer> MaxNodeValue(NodeTree<Integer> node) 
-        {
-            if (node == this.root)
-                node = this.root;
-    
-            if (node.getRight() != null) 
-                node = MaxNodeValue(node.getRight());
-            
-            return node;
-        }   
+        
+        if (heightRight > heightLeft) 
+            return heightRight + 1;
+        
+        return heightLeft + 1;
+    }
 
     // Metodos de percorrer atravessamentos
     public void AtravessamentoEmOrdem(NodeTree<Integer> node) 

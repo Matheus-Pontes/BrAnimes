@@ -1,7 +1,13 @@
+import java.util.ArrayList;
+
 public class BinaryTree
 {
     private NodeTree<Integer> root;
-    
+
+    private ArrayList<Integer> arrayToBalanceTree = new ArrayList<Integer>();
+
+    BinaryTree() {}
+
     BinaryTree(Integer data) 
     {
         this.root = new NodeTree<Integer>(data);
@@ -141,16 +147,23 @@ public class BinaryTree
         return heightLeft + 1;
     }
 
+    public void EmOrdem() 
+    {
+        this.arrayToBalanceTree = AtravessamentoEmOrdem(this.root);
+    }
+
     // Metodos de percorrer atravessamentos
-    public void AtravessamentoEmOrdem(NodeTree<Integer> node) 
+    public ArrayList<Integer> AtravessamentoEmOrdem(NodeTree<Integer> node) 
     {
         if(node != null) 
         {
             // esquerda, raíz, direita
             AtravessamentoEmOrdem(node.getLeft());
-            System.out.print(node.getData() + " | ");
+            this.arrayToBalanceTree.add(node.getData());
             AtravessamentoEmOrdem(node.getRight());
-        }   
+        }
+        
+        return this.arrayToBalanceTree;
     }
 
     public void AtravessamentoPreOrdem(NodeTree<Integer> node) 
@@ -172,6 +185,31 @@ public class BinaryTree
             AtravessamentoPosOrdem(node.getLeft());
             AtravessamentoPosOrdem(node.getRight());
             System.out.print(node.getData() + " | ");
+        }
+    }
+
+    public void BalanceTree() 
+    {
+        // Carrega array(arrayToBalanceTree) após atravessamento em Ordem
+        EmOrdem();
+
+        BinaryTree newTree = new BinaryTree();
+
+        // Balanceando a arvore utilizando busca binária
+        BinarySearch(this.arrayToBalanceTree, 0, this.arrayToBalanceTree.toArray().length - 1, newTree);
+    }
+
+    private void BinarySearch(ArrayList<Integer> array, Integer start, Integer end, BinaryTree node)  
+    {
+        if(start <= end) 
+        {
+            int middle = (start + end) / 2;
+
+            node.InsertTree(array.get(middle));
+
+            BinarySearch(array, start, middle - 1, node);
+
+            BinarySearch(array, middle + 1, end, node);
         }
     }
 }

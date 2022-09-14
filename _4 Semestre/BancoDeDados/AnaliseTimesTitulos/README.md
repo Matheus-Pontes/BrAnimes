@@ -1,9 +1,7 @@
 <h1 align="center">Analise de Dados sobre os titulos e classificações do Brasil</h1>
 
-<h2>
-    Nossa ideia é fazer analises de dados dos times brasileiros de uma forma geral, comparações entre a quantidade de titulos em suas hitórias.
-    Para melhor engajamento podemos fazer a apresentação dos dados na forma de gráficos em uma página WEB que será o futuro desda aplicação. 
-</h2>
+- Nossa ideia é fazer analises de dados dos times brasileiros de uma forma geral, comparações entre a quantidade de titulos em suas hitórias.
+- Para melhor engajamento podemos fazer a apresentação dos dados na forma de gráficos em uma página WEB que será o futuro desda aplicação. 
 
 <h3>Nossas entidades (Tabelas)</h3>
 
@@ -59,8 +57,8 @@
 </p>
 
 <footer>
+    Desenvolvedores: 
     <ul>
-        Desenvolvedores: 
         <li> Adriano</li>
         <li> Alvaro Cosmos </li>
         <li> Jhonatan Teotonio</li>

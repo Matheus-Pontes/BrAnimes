@@ -17,7 +17,7 @@ const Getters = {
             return result.recordsets;
         }
         catch (error) {
-            console.log(error);
+            return error;
         }
     },
     async getLibertadores(estadoId) {
@@ -35,7 +35,7 @@ const Getters = {
             return result.recordsets;
         }
         catch (error) {
-            console.log(error);
+            return error;
         }
     },
     async getMundial(estadoId) {
@@ -53,7 +53,7 @@ const Getters = {
             return result.recordsets;
         }
         catch (error) {
-            console.log(error);
+            return error;
         }
     },
     async getSulamerica(estadoId) {
@@ -71,7 +71,7 @@ const Getters = {
             return result.recordsets;
         }
         catch (error) {
-            console.log(error);
+            return error;
         }
     },
     async getCopaDoBrasil(estadoId) {
@@ -89,7 +89,7 @@ const Getters = {
             return result.recordsets;
         }
         catch (error) {
-            console.log(error);
+            return error;
         }
     },
     async getEstados() {
@@ -104,7 +104,7 @@ const Getters = {
             return result.recordsets;
         }
         catch (error) {
-            console.log(error);
+            return error;
         }
     }
 };

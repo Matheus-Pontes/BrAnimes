@@ -4,6 +4,7 @@ const cors = require('cors');
 const PORT = 3000;
 
 const repos = require('./repository/TimesRepository');
+const { application } = require("express");
 
 // Para evitar problemas de origem 
 app.use(cors({
@@ -46,7 +47,6 @@ app.get('/brasileirao/:id', async function(req, res) {
     const estadoId = req.params.id;
 
     const times = await repos.getBrasileirao(estadoId).then(data => data);
-
     return res.send(times);
 });
 

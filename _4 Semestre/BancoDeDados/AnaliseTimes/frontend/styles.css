@@ -1,0 +1,41 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #212121;
+    color: #fefefe;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .75rem;
+    font-size: 18pt;
+    gap: 10px;
+}
+
+header select {
+    width: 100px;
+    padding: .75rem;
+    border-radius: 8px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.graf {
+    width: 600px; 
+    height: 400px;
+}
+
+.graf rect {
+    rx: 12px;
+}

@@ -1,11 +1,11 @@
-<h1 align='center'>Analise de times e seus títulos <img src="https://img.icons8.com/office/16/000000/pie-chart.png"/></h1>
+<h1 align='center'>Analise de times e seus títulos <img src="https://img.icons8.com/office/30/000000/pie-chart.png"/></h1>
 
 - O projeto, é uma solução com frontend, backend e banco de dados. 
 - Onde, temos gráficos para analise de dados dos times brasileiros e seus títulos filtrando pelo estado.
 
 ## Layout
 
-- colocar imagem 
+![image](https://user-images.githubusercontent.com/62751571/193364771-00cefb93-9f3c-4db8-a60a-ae0b2b1abe51.png)
 
 ## Instalações necessárias
 - Banco de dados 
@@ -22,8 +22,9 @@
     - Caso de tudo certo verifique as instalações no arquivo:
         - ``` backend/package.json```
         - Propriedade: ``` dependencies ```
-
-
+- Gráficos
+    - Usando API do [google charts](https://developers.google.com/chart)
+  
 ## Execução do projeto
 - Clone o projeto
 - Tenha um banco de dados 
@@ -40,7 +41,6 @@
         - obs: para uma visualização inicial, setamos o primeiro filtro para o estado de SP(são paulo)
 - Tratativa do front-end
     - Caso o servidor não esteja ligado ou, se os dados não chegaram no front-end, uma mensagem de erro genérica será mostrada na tela para o usuário.
-        - [imagem]
-
+         ![image](https://user-images.githubusercontent.com/62751571/193364534-df8bc14e-ac36-469b-a670-d7decd892e71.png)
 <hr>
 <h3 align='center'>É ISSO APROVEITE O PROJETO 👊</h3>

@@ -32,10 +32,9 @@
     - Crie as tabelas e preencha com os dados da pasta ``` SCRIPTS ```
 - Conecte o banco com a aplicação NodeJS
     - A partir do arquivo ``` backend/src/repository/dbconfig.js ```
-- Conexão feita,
+- Conexão feita
     - ligue o servidor ``` backend/src/server ```  
         - comando: ``` node server ``` 
-
     - Abra o projeto front-end no seu navegador
         - ``` frontend/index.html ``` 
         - obs: para uma visualização inicial, setamos o primeiro filtro para o estado de SP(são paulo)

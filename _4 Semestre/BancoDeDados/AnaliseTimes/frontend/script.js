@@ -1,11 +1,12 @@
 const $estados = document.querySelector('#estados');
 const $grafBR = document.querySelector('#brasileirao');
 const $grafLB = document.querySelector('#libertadores');
-const $grafCBR = document.querySelector('#mundial');
-const $grafMD = document.querySelector('#copaDoBrasil');
+const $grafCBR = document.querySelector('#copaDoBrasil');
+const $grafMD = document.querySelector('#mundial'); 
 const $grafSULA = document.querySelector('#sulamericana');
 const $message = document.querySelector('.message');
 const estadoSP = 25; 
+const API = 'http://localhost:3000/';
 
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChartBR);
@@ -20,31 +21,28 @@ function valoresIniciais() {
 }
 
 async function drawChartBR() {
-    const times = await GetBrasileirao().then(data => data);
+    const times = await GetTimesTitulos().then(data => data);
+    
+    let dataBR = new google.visualization.DataTable();
 
-    let data = new google.visualization.DataTable();
-
-    data.addColumn('string', 'Topping');
-    data.addColumn('number', 'Slices');
+    dataBR.addColumn('string', 'Topping');
+    dataBR.addColumn('number', 'Slices');
 
     times.forEach(time => {
-        data.addRows([
+        dataBR.addRows([
             [time.Nome, time.BrasileiraoQuantidade]
         ]);
     });
+    
+    let options = { title: 'Brasilerão', is3D: true };
 
-    let options = {
-        title: 'Brasilerão',
-        is3D: true
-    };
+    let chartBR = new google.visualization.PieChart($grafBR);
 
-    let chart = new google.visualization.PieChart($grafBR);
-
-    chart.draw(data, options);
+    chartBR.draw(dataBR, options);
 }
 
 async function drawChartLiberta() {
-    const times = await GetLibertadores().then(data => data);
+    const times = await GetTimesTitulos().then(data => data);
 
     let data = new google.visualization.DataTable();
 
@@ -68,7 +66,7 @@ async function drawChartLiberta() {
 }
 
 async function drawChartMundial() {
-    const times = await GetMundial().then(data => data);
+    const times = await GetTimesTitulos().then(data => data);
 
     let data = new google.visualization.DataTable();
 
@@ -92,7 +90,7 @@ async function drawChartMundial() {
 }
 
 async function drawChartCopaDoBrasil() {
-    const times = await GetCopaDoBrasil().then(data => data);
+    const times = await GetTimesTitulos().then(data => data);
 
     let data = new google.visualization.DataTable();
 
@@ -116,7 +114,7 @@ async function drawChartCopaDoBrasil() {
 }
 
 async function drawChartSulamericana() {
-    const times = await GetSulamericana().then(data => data);
+    const times = await GetTimesTitulos().then(data => data);
 
     let data = new google.visualization.DataTable();
 
@@ -147,37 +145,7 @@ $estados.addEventListener('change', function() {
     drawChartSulamericana();
 });
 
-async function GetBrasileirao() {
-    const [ times ] = await fetch(`http://localhost:3000/brasileirao/${$estados.value}`).then(data => data.json());
-
-    return times;
-}
-
-async function GetLibertadores() {
-    const [ times ] = await fetch(`http://localhost:3000/libertadores/${$estados.value}`).then(data => data.json());
-
-    return times;
-}
-
-async function GetMundial() {
-    const [ times ] = await fetch(`http://localhost:3000/mundial/${$estados.value}`).then(data => data.json());
-
-    return times;
-}
-
-async function GetCopaDoBrasil() {
-    const [ times ] = await fetch(`http://localhost:3000/copadobrasil/${$estados.value}`).then(data => data.json());
-
-    return times;
-}
-
-async function GetSulamericana() {
-    const [ times ] = await fetch(`http://localhost:3000/sulamericana/${$estados.value}`).then(data => data.json());
-
-    return times;
-}
-
-function showGrafs(deuErro) {
+function showGrafsOrMessage(deuErro) {
     if (deuErro) {
         $message.style.display = 'block';
         $grafBR.style.display = 'none';
@@ -196,9 +164,15 @@ function showGrafs(deuErro) {
     }
 }
 
+async function GetTimesTitulos() {
+    const [ times ] = await fetch(`${API}${'timesTitulos/'}${$estados.value}`).then(data => data.json());
+
+    return times;
+}
+
 async function GetEstados() {
-    const [ estados ] = await fetch('http://localhost:3000/estados').then(data => data.json()).catch(err => { 
-        showGrafs(err.message);
+    const [ estados ] = await fetch(`${API}${'estados'}`).then(data => data.json()).catch(err => { 
+        showGrafsOrMessage(err.message);
     });
 
     estados.forEach(estado => {
@@ -206,7 +180,6 @@ async function GetEstados() {
             <option value="${estado.EstadoId}">${estado.Descricao}</option>
         `;
     });
-
     
     valoresIniciais();
 }

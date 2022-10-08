@@ -184,17 +184,14 @@ public class BinaryTree
         {
             NodeTree value = fila.dequeue();
 
-            if(value != null ) {
-                if(value.getLeft() != null)
-                    fila.enqueue(value.getLeft());
-                    
-                if(value.getRight() != null)
-                    fila.enqueue(value.getRight());
-
-                System.out.print(value.getData() + " | ");
-            }
-            else
-                break;
+            
+            if(value.getLeft() != null)
+                fila.enqueue(value.getLeft());
+                   
+            if(value.getRight() != null)
+                fila.enqueue(value.getRight());
+            
+            System.out.print(value.getData() + " | ");
         }
     }    
 

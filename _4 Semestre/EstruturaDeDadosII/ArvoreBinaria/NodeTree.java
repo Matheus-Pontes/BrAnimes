@@ -1,37 +1,37 @@
-public class NodeTree<T> {
-    private T data;
+public class NodeTree {
+    private Integer data;
 
-    private NodeTree<T> left;
-    private NodeTree<T> right;
+    private NodeTree left;
+    private NodeTree right;
 
-    public NodeTree(T data) 
+    public NodeTree(Integer data) 
     {
         this.data = data;
     }
 
     public NodeTree() { }
 
-    public T getData() {
+    public Integer getData() {
         return data;
     }
 
-    public NodeTree<T> getLeft() {
+    public NodeTree getLeft() {
         return left;
     }
 
-    public NodeTree<T> getRight() {
+    public NodeTree getRight() {
         return right;
     }
 
-    public void setData(T data) {
+    public void setData(Integer data) {
         this.data = data;
     }
 
-    public void setLeft(NodeTree<T> left) {
+    public void setLeft(NodeTree left) {
         this.left = left;
     }
 
-    public void setRight(NodeTree<T> right) {
+    public void setRight(NodeTree right) {
         this.right = right;
     }
 }

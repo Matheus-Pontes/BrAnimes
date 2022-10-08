@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class BinaryTree
 {
-    private NodeTree<Integer> root;
+    private NodeTree root;
 
     private ArrayList<Integer> arrayToBalanceTree = new ArrayList<Integer>();
 
@@ -10,14 +10,14 @@ public class BinaryTree
 
     BinaryTree(Integer data) 
     {
-        this.root = new NodeTree<Integer>(data);
+        this.root = new NodeTree(data);
     }
 
-    public void setRoot(NodeTree<Integer> root) {
+    public void setRoot(NodeTree root) {
         this.root = root;
     }
 
-    public NodeTree<Integer> getRoot() {
+    public NodeTree getRoot() {
         return root;
     }
 
@@ -26,44 +26,29 @@ public class BinaryTree
         this.root = InsertNode(root, data);
     }
 
-    private NodeTree<Integer> InsertNode(NodeTree<Integer> node, Integer data) 
+    private NodeTree InsertNode(NodeTree node, Integer data) 
     {
         if (node != null) 
         {
             // Lógica para ver o lado que vai ser inserido o dado
             if(data < node.getData()) 
-            {
-                // Coloca o nó no lado esquerda da raíz
                 node.setLeft(InsertNode(node.getLeft(), data));
-                System.out.println("Colocando: " + data);
-                System.out.println("Na esquerda de: " + node.getData());
-            } 
             else 
-            {
-                // Coloca o nó no lado direito
-                node.setRight(InsertNode(node.getRight(), data));
-                System.out.println("Colocando: " + data);
-                System.out.println("Na direita de: " + node.getData());
-            }
+                node.setRight(InsertNode(node.getRight(), data));   
         }
         else 
-        {
-            // Criando uma raíz ou um nó
-            System.out.println("RAÍZ: " + data);
-            node = new NodeTree<Integer>(data);
-            return node;
-        }
+            node = new NodeTree(data);
 
         return node;
     }
 
     // Remoção
-    public void RemoveBinaryTree(int data, NodeTree<Integer> node) 
+    public void RemoveBinaryTree(int data, NodeTree node) 
     {
         this.root = RemoveNode(data, node);
     }
 
-    private NodeTree<Integer> RemoveNode(int data, NodeTree<Integer> node) 
+    private NodeTree RemoveNode(int data, NodeTree node) 
     {
         if(node == null)
             return node;
@@ -90,7 +75,7 @@ public class BinaryTree
     }
 
     // Nó com o menor valor a esquerda
-    public NodeTree<Integer> MinusNodeValue(NodeTree<Integer> node) 
+    public NodeTree MinusNodeValue(NodeTree node) 
     {
         if (node == this.root) 
             node = this.root;
@@ -102,7 +87,7 @@ public class BinaryTree
     }
 
     // Nó com o maior valor a direita
-    public NodeTree<Integer> MaxNodeValue(NodeTree<Integer> node) 
+    public NodeTree MaxNodeValue(NodeTree node) 
     {
         if (node == this.root)
             node = this.root;
@@ -114,7 +99,7 @@ public class BinaryTree
     }   
 
     // Busca
-    public boolean SearchBinaryTree(Integer data, NodeTree<Integer> node) 
+    public boolean SearchBinaryTree(Integer data, NodeTree node) 
     {
         if(node == null) 
             return false;
@@ -129,7 +114,7 @@ public class BinaryTree
     }
 
     // Altura da arvore
-    public int HeightBinaryTree(NodeTree<Integer> node) 
+    public int HeightBinaryTree(NodeTree node) 
     {
         int heightLeft = 0, heightRight = 0;
 
@@ -153,12 +138,13 @@ public class BinaryTree
     }
 
     // Metodos de percorrer atravessamentos
-    public ArrayList<Integer> AtravessamentoEmOrdem(NodeTree<Integer> node) 
+    public ArrayList<Integer> AtravessamentoEmOrdem(NodeTree node) 
     {
         if(node != null) 
         {
             // esquerda, raíz, direita
             AtravessamentoEmOrdem(node.getLeft());
+            System.out.print(node.getData() + " | ");
             this.arrayToBalanceTree.add(node.getData());
             AtravessamentoEmOrdem(node.getRight());
         }
@@ -166,7 +152,7 @@ public class BinaryTree
         return this.arrayToBalanceTree;
     }
 
-    public void AtravessamentoPreOrdem(NodeTree<Integer> node) 
+    public void AtravessamentoPreOrdem(NodeTree node) 
     {
         // Raíz, Esquerda, Direita
         if(node != null) 
@@ -177,7 +163,7 @@ public class BinaryTree
         }
     }
 
-    public void AtravessamentoPosOrdem(NodeTree<Integer> node) 
+    public void AtravessamentoPosOrdem(NodeTree node) 
     {
         // Esquerda, Direita, Raíz
         if(node != null) 
@@ -187,6 +173,30 @@ public class BinaryTree
             System.out.print(node.getData() + " | ");
         }
     }
+
+    public void AtravessamentoEmNivel(NodeTree node) 
+    {
+        Queue fila = new Queue(100);
+        
+        fila.enqueue(node);
+
+        while (true) 
+        {
+            NodeTree value = fila.dequeue();
+
+            if(value != null ) {
+                if(value.getLeft() != null)
+                    fila.enqueue(value.getLeft());
+                    
+                if(value.getRight() != null)
+                    fila.enqueue(value.getRight());
+
+                System.out.print(value.getData() + " | ");
+            }
+            else
+                break;
+        }
+    }    
 
     public void BalanceTree() 
     {

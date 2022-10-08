@@ -5,7 +5,7 @@ public class Program
         // Iniciando arvore
         BinaryTree tree = new BinaryTree(3);
         
-        int[] randomNumbers = {2, 12, 5, 4};
+        int[] randomNumbers = {2, 12, 1, 5, 4};
 
         for(var rn : randomNumbers) 
         {
@@ -28,6 +28,12 @@ public class Program
         
         System.out.print(" Pós-ordem (EDR): ");
         tree.AtravessamentoPosOrdem(tree.getRoot());
+        System.out.println();
+        System.out.println("================");
+        
+        
+        System.out.print(" Em nível: ");
+        tree.AtravessamentoEmNivel(tree.getRoot());
         System.out.println();
         System.out.println("================");
     }

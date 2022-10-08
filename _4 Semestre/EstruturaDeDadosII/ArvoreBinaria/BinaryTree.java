@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class BinaryTree
 {
     private NodeTree root;
-
+    private int quantityElements;
     private ArrayList<Integer> arrayToBalanceTree = new ArrayList<Integer>();
 
     BinaryTree() {}
@@ -19,6 +19,14 @@ public class BinaryTree
 
     public NodeTree getRoot() {
         return root;
+    }
+
+    public int getQuantityElements() {
+        return quantityElements;
+    }
+
+    public void setQuantityElements(int quantityElements) {
+        this.quantityElements = quantityElements;
     }
 
     public void InsertTree(Integer data) 
@@ -176,7 +184,11 @@ public class BinaryTree
 
     public void AtravessamentoEmNivel(NodeTree node) 
     {
-        Queue fila = new Queue(100);
+        setQuantityElements(0);
+        // Carrega quantidade de elementos na árvore
+        QuantityElementsBT();
+
+        Queue fila = new Queue(getQuantityElements());
         
         fila.enqueue(node);
 
@@ -193,6 +205,26 @@ public class BinaryTree
             System.out.print(value.getData() + " | ");
         }
     }    
+
+    public void QuantityElementsBT() {
+        this.quantityElements = QuantifyElementsTree(this.getRoot());
+        System.out.println("Quantidade de elementos na arvore: " + this.quantityElements);
+    }
+
+    private int QuantifyElementsTree(NodeTree node) 
+    {
+        if (node != null) 
+        {
+            if (node.getLeft() != null || node.getRight() != null) {
+                this.quantityElements = QuantifyElementsTree(node.getLeft()) + 1;
+            }
+
+            if(node.getRight() != null)
+                this.quantityElements = QuantifyElementsTree(node.getRight()) + 1;
+        }
+
+        return this.quantityElements;
+    }
 
     public void BalanceTree() 
     {

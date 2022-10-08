@@ -5,13 +5,15 @@ public class Program
         // Iniciando arvore
         BinaryTree tree = new BinaryTree(3);
         
-        int[] randomNumbers = {2, 12, 1, 5, 4};
+        int[] randomNumbers = {2, 12, 1, 3, 5, 4};
 
         for(var rn : randomNumbers) 
         {
             tree.InsertTree(rn);
         }
         
+        tree.QuantityElementsBT();
+
         System.out.println("=================");
         System.out.println(" Atravessamentos ");
         System.out.println("=================");

@@ -180,7 +180,7 @@ public class BinaryTree
         
         fila.enqueue(node);
 
-        while (true) 
+        while (!fila.isEmpty())  
         {
             NodeTree value = fila.dequeue();
 

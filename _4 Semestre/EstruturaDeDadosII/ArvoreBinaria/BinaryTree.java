@@ -184,7 +184,6 @@ public class BinaryTree
         {
             NodeTree value = fila.dequeue();
 
-            
             if(value.getLeft() != null)
                 fila.enqueue(value.getLeft());
                    

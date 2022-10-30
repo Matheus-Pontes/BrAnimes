@@ -1,30 +1,54 @@
+import java.util.Scanner;
+
 public class Program 
 {
     public static void main(String[] args) 
     {
-        HashingTable hashingTable = new HashingTable(4);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("====================================");
+        System.out.println("              Tabela hash           ");
+        System.out.println("====================================");
+
+        System.out.println("Quantidade de elementos na tabela ? ");
+        int quantidade = scanner.nextInt();
+
+        HashingTable hashingTable = new HashingTable(quantidade);
         
-        int[] values = {100, 50, 300, 50}; 
+        int option;
 
-        for(int i=0; i < values.length; i++) 
-        {
-            hashingTable.put(values[i]);
-        }
+        do {
+            System.out.println("\n1 - Inserir os valores\n2 - Buscar um valor\n3 - Remover um valor\n4 - Mostrar valores\n0 - Sair");
+            System.out.print("\nSua opção ? ");
 
-        hashingTable.print();
-        
-        hashingTable.remove(50);
+            option = scanner.nextInt();
+            
+            switch(option) {
+                case 1: 
+                    for(int i=0; i < quantidade; i++) 
+                    {   
+                        System.out.print("Valor " + (i + 1) + ": ");
+                        hashingTable.put(scanner.nextInt());
+                    }
+    
+                    System.out.println("Valores aguardados !!!");
+                break;
+                case 2: 
+                    System.out.print("Digite um valor para buscar: ");
+                    int valor = scanner.nextInt();
+                    int posicao = hashingTable.search(valor);
+                    System.out.println("Buscando pelo valor: " + valor + "" + (posicao != -1 ? "\nEle está na posição: " + posicao : "\nNão encontrado"));
+                break;
+                case 3: 
+                    System.out.print("Digite um valor para remover: ");
+                    hashingTable.remove(scanner.nextInt());
+                    break;
+                case 4: 
+                    System.out.println("Mostrando os valores guardados.");
+                    hashingTable.print();
+                break;
+            }
+        } while(option != 0);
 
-        System.out.println();
-        
-        hashingTable.print();
-
-        hashingTable.put(50);
-
-        int valor = 100;
-        int posicao = hashingTable.search(valor);
-        System.out.println("Buscando pelo valor: " + valor + "" + (posicao != -1 ? "\nEle está na posição: " + posicao : "\nNão encontrado"));
-
-        hashingTable.print();
     }
 }

@@ -39,16 +39,15 @@ public class HashingTable
         return 107 * key % getSize();
     }
 
-    private int reHashCode(int key) {
-        int position = hashCode(key) + 1;
+    private int reHashCode(int key, int posicao) {
+        posicao += 1;
 
-        if(this.table[position] == 0)
-            return position;
+        if(posicao == this.table.length)
+            posicao = 0;
 
-        if(position == this.table.length - 1)
-            return 0;
-        else
-            return reHashCode(key);
+        if(this.table[posicao] == 0)
+            return posicao;
+        return reHashCode(key, posicao);
     }
 
     public void putInTable(int position, int value) {
@@ -60,7 +59,7 @@ public class HashingTable
         int position = hashCode(value);
 
         if(this.table[position] != 0) {
-            position = reHashCode(value);
+            position = reHashCode(value, position);
             putInTable(position, value);
         }
         else 

@@ -25,6 +25,7 @@ public class Program
             
             switch(option) {
                 case 1: 
+
                     for(int i=0; i < quantidade; i++) 
                     {   
                         System.out.print("Valor " + (i + 1) + ": ");
@@ -40,7 +41,7 @@ public class Program
                     System.out.println("Buscando pelo valor: " + valor + "" + (posicao != -1 ? "\nEle está na posição: " + posicao : "\nNão encontrado"));
                 break;
                 case 3: 
-                    System.out.print("Digite um valor para remover: ");
+                    System.out.print("Digite um valor para remover(se tiver valores iguais tambem será removido): ");
                     hashingTable.remove(scanner.nextInt());
                     break;
                 case 4: 
@@ -49,6 +50,5 @@ public class Program
                 break;
             }
         } while(option != 0);
-
     }
 }

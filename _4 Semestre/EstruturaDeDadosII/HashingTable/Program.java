@@ -50,5 +50,7 @@ public class Program
                 break;
             }
         } while(option != 0);
+
+        scanner.close();
     }
 }

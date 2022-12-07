@@ -4,12 +4,15 @@ const cors = require('cors');
 const PORT = 3000;
 
 const repos = require('./repository/TimesRepository');
-const { application } = require("express");
 
 // Para evitar problemas de origem 
 app.use(cors({
     origin: '*'
 }));
+
+app.get("/", function(req, res) {
+    return res.send({ conexaoFeita: true});
+});
 
 app.get('/timesTitulos/:id', async function(req, res) {
     const estadoId = req.params.id;

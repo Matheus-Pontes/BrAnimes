@@ -7,6 +7,42 @@ const $grafSULA = document.querySelector('#sulamericana');
 const $message = document.querySelector('.message');
 const estadoSP = 25; 
 const API = 'http://localhost:3000/';
+let temConexaoComServidor = false;
+
+async function GetEstados() {
+    const [ estados ] = await fetch(`${API}${'estados'}`).then(data => data.json()).catch(err => { 
+        showGrafsOrMessage(false);
+    });
+
+    estados.forEach(estado => {
+        $estados.innerHTML += `
+            <option value="${estado.EstadoId}">${estado.Descricao}</option>
+        `;
+    });
+    
+    valoresIniciais();
+}
+
+async function VerifyConection() {
+    const response = await fetch(API).then(res => res.json());
+    temConexaoComServidor = response.conexaoFeita;
+    
+    if(temConexaoComServidor) {
+        showGrafsOrMessage(temConexaoComServidor);
+        
+        setTimeout(() => {
+            GetEstados();
+        }, 2000);
+    }
+    else {
+        showGrafsOrMessage(temConexaoComServidor);
+    }
+}
+
+setInterval(() => {
+    VerifyConection();
+}, 5000);
+
 
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChartBR);
@@ -145,22 +181,30 @@ $estados.addEventListener('change', function() {
     drawChartSulamericana();
 });
 
-function showGrafsOrMessage(deuErro) {
-    if (deuErro) {
-        $message.style.display = 'block';
-        $grafBR.style.display = 'none';
-        $grafLB.style.display = 'none';
-        $grafMD.style.display = 'none';
-        $grafCBR.style.display = 'none';
-        $grafSULA.style.display = 'none';
-    }
-    else{
-        $message.style.display = 'none';
+function showGrafsOrMessage(conexaoFeita) {
+    if (conexaoFeita) {
+        $message.style.backgroundColor = "#2b934e";
+        $message.innerHTML = "<h2>Conexão feita com sucesso!!!</h2>";
+        $message.style.borderColor = "rgb(33 126 56)";
+        setTimeout(() => {
+            $message.style.display = "none";
+        }, 2000);
         $grafBR.style.display = 'block';
         $grafLB.style.display = 'block';
         $grafMD.style.display = 'block';
         $grafCBR.style.display = 'block';
         $grafSULA.style.display = 'block';
+    }
+    else{
+        $message.style.display = 'block';
+        $message.style.backgroundColor = "#ee2b2b";
+        $message.innerHTML = "<h2>Verifique conexão com o servidor !!! </h2>";
+        $message.style.borderColor = "red";
+        $grafBR.style.display = 'none';
+        $grafLB.style.display = 'none';
+        $grafMD.style.display = 'none';
+        $grafCBR.style.display = 'none';
+        $grafSULA.style.display = 'none';
     }
 }
 
@@ -170,18 +214,3 @@ async function GetTimesTitulos() {
     return times;
 }
 
-async function GetEstados() {
-    const [ estados ] = await fetch(`${API}${'estados'}`).then(data => data.json()).catch(err => { 
-        showGrafsOrMessage(err.message);
-    });
-
-    estados.forEach(estado => {
-        $estados.innerHTML += `
-            <option value="${estado.EstadoId}">${estado.Descricao}</option>
-        `;
-    });
-    
-    valoresIniciais();
-}
-
-GetEstados();

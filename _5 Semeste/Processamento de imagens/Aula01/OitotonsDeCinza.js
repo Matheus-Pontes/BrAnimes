@@ -1,6 +1,6 @@
 let carro1, carro2;
 
-let graysColors = [33, 52, 73, 108, 173, 206, 222, 233];
+let graysColors = [32, 64, 96, 128, 160, 192, 224, 255];
 
 function preload() {
     carro1 = loadImage('carro.png');
@@ -17,22 +17,22 @@ function setup() {
 }
 
 function getTomDeCinza(colorBit) {
-    if (colorBit < 50)
-       return graysColors[0];
-    else if (colorBit < 80)
+    if (colorBit < 32)
        return graysColors[1];
-    else if (colorBit < 90)
+    else if (colorBit < 64)
        return graysColors[2];
-    else if(colorBit < 105)
-       return graysColors[3];  
-    else if(colorBit < 155)
+    else if (colorBit < 96)
+       return graysColors[3];
+    else if(colorBit < 128)
        return graysColors[4];  
-    else if(colorBit < 180)
-        return graysColors[5];  
-    else if(colorBit < 200)
+    else if(colorBit < 160)
+       return graysColors[5];  
+    else if(colorBit < 192)
         return graysColors[6];  
-    else if(colorBit < 255)
+    else if(colorBit < 224)
         return graysColors[7];  
+    else
+        return graysColors[0];  
 }
 
 function draw() {

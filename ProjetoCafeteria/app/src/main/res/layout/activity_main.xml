@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="8dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp">
+
+        <Button
+            android:id="@+id/btnCardapio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#3259e9"
+            android:backgroundTint="#000000"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:text="Cardapio"
+            app:cornerRadius="0dp"
+            app:iconPadding="0dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/btnListarPorTipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#3259e9"
+            android:backgroundTint="#000000"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:text="Listar por tipo"
+            app:cornerRadius="0dp"
+            app:iconPadding="0dp"
+            tools:layout_editor_absoluteX="128dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <EditText
+            android:id="@+id/txtFiltroTipo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="8"
+            android:hint="Filtro por tipo" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnVerAutores"
+        android:layout_width="168dp"
+        android:layout_height="61dp"
+        android:layout_gravity="end"
+        android:background="#009688"
+        android:text="Ver autores" />
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="8dp"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="392dp"
+        android:layout_height="32dp"
+        android:background="#399AB3"
+        android:gravity="center"
+        android:text="Autores"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="17dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="302dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:text="Adriano Lima 				  RGM: 	 27715850"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="73dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="302dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:text="Eliezer Nascimento  			  RGM: 	 26776758 "
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="113dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="302dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:text="Giovanni Soares 			  RGM: 	 27058409"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="150dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="302dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:text="Jhonatan Teotonio 			  RGM: 	 25905520"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="191dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="302dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:text="Marco Antonio Oliveira	 		  RGM: 	 27566340"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="234dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="302dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:text="Mateus Fernadez 			  RGM: 	 26426357 "
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="273dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="302dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:text="Matheus Pontes	 			  RGM: 	 26712652"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="314dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="302dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:text="Vinicius Lebre 				  RGM: 	 26755041"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="353dp" />
+
+    <Button
+        android:id="@+id/btnVoltarAoCardapio"
+        android:layout_marginTop="12dp"
+        android:layout_width="191dp"
+        android:layout_height="50dp"
+        android:background="#FF0000"
+        android:layout_gravity="end"
+        android:text="Voltar ao cardapio"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="429dp" />
+</LinearLayout>

@@ -20,4 +20,7 @@
 ## Ferramentas :gear:
 - [VScode - versão stable](https://code.visualstudio.com/) 
     - Para o Java necessário instalar de uma forma diferente possível ser encontrada na documentação do vscode.
+- Visual studio - community
+- Android studio
+- SSMS - SQL Server Management Studio
 
